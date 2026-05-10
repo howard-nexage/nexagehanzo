@@ -1,0 +1,195 @@
+/* =============================================
+   faq.css — FAQ Page
+   ============================================= */
+
+/* ---------- FAQ Hero ---------- */
+.faq-hero {
+  background: #f7f4ef;
+  padding: 96px 48px 72px;
+  border-bottom: 0.5px solid rgba(90, 122, 74, 0.12);
+}
+
+.faq-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-hero-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 700;
+  color: #2c3a2c;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.faq-hero-title em {
+  font-weight: 400;
+  font-style: italic;
+  color: #5a7a4a;
+}
+
+.faq-hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.55);
+  line-height: 1.75;
+}
+
+.faq-contact-link {
+  color: #5a7a4a;
+  border-bottom: 0.5px solid rgba(90, 122, 74, 0.40);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.faq-contact-link:hover {
+  color: #6b8f59;
+  border-color: rgba(90, 122, 74, 0.80);
+}
+
+/* ---------- FAQ Section ---------- */
+.faq-section {
+  background: #eee9e0;
+  padding: 80px 48px 96px;
+  border-top: 0.5px solid rgba(90, 122, 74, 0.12);
+}
+
+.faq-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ---------- FAQ Group ---------- */
+.faq-group { display: flex; flex-direction: column; }
+
+.faq-group-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3a2c;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 0.5px solid rgba(90, 122, 74, 0.20);
+}
+
+/* ---------- FAQ Item (Accordion) ---------- */
+.faq-item {
+  border-bottom: 0.5px solid rgba(44, 58, 44, 0.07);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+}
+
+.faq-question span:first-child {
+  font-size: 15px;
+  font-weight: 400;
+  color: #2c3a2c;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover span:first-child { color: #5a7a4a; }
+
+.faq-icon {
+  font-size: 20px;
+  font-weight: 300;
+  color: #5a7a4a;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
+/* ---------- FAQ Answer ---------- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-answer p {
+  padding-bottom: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.60);
+  line-height: 1.85;
+}
+
+.faq-answer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 4px;
+  padding-bottom: 16px;
+}
+
+.faq-answer ul li {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.60);
+  line-height: 1.75;
+  padding-left: 16px;
+  position: relative;
+}
+
+.faq-answer ul li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #5a7a4a;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.faq-answer strong { color: #2c3a2c; font-weight: 500; }
+
+/* 허브 전통 사용 disclaimer */
+.faq-disclaimer-note {
+  font-size: 11px !important;
+  color: rgba(44, 58, 44, 0.30) !important;
+  font-style: italic;
+  padding-bottom: 20px;
+  line-height: 1.6 !important;
+}
+
+/* 인라인 링크 */
+.faq-inline-link {
+  color: #5a7a4a;
+  border-bottom: 0.5px solid rgba(90, 122, 74, 0.35);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.faq-inline-link:hover {
+  color: #6b8f59;
+  border-color: rgba(90, 122, 74, 0.70);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .faq-hero    { padding: 72px 24px 56px; }
+  .faq-section { padding: 60px 24px 72px; }
+  .faq-question span:first-child { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .faq-hero    { padding: 56px 20px 48px; }
+  .faq-section { padding: 48px 20px 64px; }
+}

@@ -1,0 +1,209 @@
+/* =============================================
+   where-to-buy.css — Where to Buy Page
+   ============================================= */
+
+/* ---------- Coming Soon Hero ---------- */
+.wtb-hero {
+  background: #f7f4ef;
+  padding: 96px 48px 80px;
+  border-bottom: 0.5px solid rgba(90, 122, 74, 0.12);
+}
+
+.wtb-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.wtb-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 700;
+  color: #2c3a2c;
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+
+.wtb-title em {
+  font-weight: 400;
+  font-style: italic;
+  color: #5a7a4a;
+}
+
+.wtb-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.60);
+  line-height: 1.85;
+  margin-bottom: 16px;
+  max-width: 600px;
+}
+
+/* ---------- Email Signup ---------- */
+.wtb-signup {
+  margin-top: 48px;
+}
+
+.wtb-signup-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(44, 58, 44, 0.35);
+  margin-bottom: 12px;
+}
+
+.wtb-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+}
+
+.wtb-input {
+  flex: 1;
+  background: rgba(44, 58, 44, 0.05);
+  border: 0.5px solid rgba(44, 58, 44, 0.20);
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: #2c3a2c;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.wtb-input::placeholder { color: rgba(44, 58, 44, 0.25); }
+.wtb-input:focus { border-color: rgba(90, 122, 74, 0.50); }
+.wtb-input:disabled { opacity: 0.5; }
+
+.wtb-btn {
+  background: #5a7a4a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  padding: 14px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.wtb-btn:hover { background: #6b8f59; }
+.wtb-btn:disabled { opacity: 0.7; cursor: default; }
+
+.wtb-form-note {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 20px;
+}
+
+/* ---------- Distribution Info ---------- */
+.wtb-info {
+  background: #eee9e0;
+  padding: 96px 48px;
+  border-top: 0.5px solid rgba(90, 122, 74, 0.12);
+}
+
+.wtb-info-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wtb-info-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 600;
+  color: #2c3a2c;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+
+.wtb-info-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.55);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+/* Channel Cards */
+.wtb-channels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.wtb-channel-card {
+  background: #f7f4ef;
+  border: 0.5px solid rgba(90, 122, 74, 0.15);
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.wtb-channel-card:hover {
+  border-color: rgba(90, 122, 74, 0.45);
+  transform: translateY(-4px);
+}
+
+.wtb-channel-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(90, 122, 74, 0.10);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.wtb-channel-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c3a2c;
+  margin-bottom: 10px;
+}
+
+.wtb-channel-body {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.55);
+  line-height: 1.75;
+}
+
+/* Contact CTA */
+.wtb-contact-cta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 40px;
+  border-top: 0.5px solid rgba(90, 122, 74, 0.12);
+}
+
+.wtb-contact-text {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.55);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .wtb-hero { padding: 72px 24px 60px; }
+  .wtb-info { padding: 72px 24px; }
+  .wtb-channels { grid-template-columns: 1fr; }
+  .wtb-contact-cta { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .wtb-form { flex-direction: column; }
+  .wtb-input { border-right: 0.5px solid rgba(44, 58, 44, 0.20); border-radius: 3px 3px 0 0; }
+  .wtb-btn { border-radius: 0 0 3px 3px; text-align: center; }
+}

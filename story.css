@@ -1,0 +1,212 @@
+/* =============================================
+   story.css — Our Story Page
+   ============================================= */
+
+/* ---------- Active Nav Link ---------- */
+.nav-active {
+  color: #5a7a4a !important;
+}
+
+.nav-active::after {
+  width: 100% !important;
+}
+
+/* ---------- Story Hero ---------- */
+.story-hero {
+  background: #f7f4ef;
+  padding: 96px 48px 80px;
+  border-bottom: 0.5px solid rgba(90, 122, 74, 0.12);
+}
+
+.story-hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.story-hero-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 700;
+  color: #2c3a2c;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.story-hero-title em {
+  font-weight: 400;
+  font-style: italic;
+  color: #5a7a4a;
+}
+
+.story-hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.60);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ---------- Story Section Base ---------- */
+.story-section {
+  padding: 96px 48px;
+  background: #f7f4ef;
+  border-top: 0.5px solid rgba(90, 122, 74, 0.10);
+}
+
+.story-section--dark {
+  background: #eee9e0;
+}
+
+.story-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- Two Column Layout ---------- */
+.story-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.story-two-col--reverse .story-img-block {
+  order: 2;
+}
+
+.story-two-col--reverse .story-text-block {
+  order: 1;
+}
+
+/* ---------- Image Block ---------- */
+.story-img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.story-img-placeholder {
+  width: 100%;
+  height: 420px;
+  background: #f7f4ef;
+  border: 1px dashed rgba(90, 122, 74, 0.20);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 36px;
+  color: rgba(44, 58, 44, 0.12);
+}
+
+.story-img-placeholder small {
+  font-size: 11px;
+  color: rgba(44, 58, 44, 0.15);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Text Block ---------- */
+.story-section-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 600;
+  color: #2c3a2c;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.story-section-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.60);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.story-section-body:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Values Grid ---------- */
+.story-values-header {
+  margin-bottom: 48px;
+}
+
+.story-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.story-value-card {
+  background: #f7f4ef;
+  border: 0.5px solid rgba(90, 122, 74, 0.15);
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.story-value-card:hover {
+  border-color: rgba(90, 122, 74, 0.45);
+  transform: translateY(-4px);
+}
+
+.value-icon {
+  font-size: 24px;
+  margin-bottom: 16px;
+  width: 48px;
+  height: 48px;
+  background: rgba(90, 122, 74, 0.10);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c3a2c;
+  margin-bottom: 10px;
+}
+
+.value-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(44, 58, 44, 0.55);
+  line-height: 1.75;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .story-hero { padding: 72px 24px 60px; }
+  .story-section { padding: 72px 24px; }
+
+  .story-two-col {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-two-col--reverse .story-img-block,
+  .story-two-col--reverse .story-text-block {
+    order: unset;
+  }
+
+  .story-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .story-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-img-placeholder {
+    height: 260px;
+  }
+}
