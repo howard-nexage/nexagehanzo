@@ -214,7 +214,7 @@ a { text-decoration: none; color: inherit; }
   background-position: center;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-columns: 6fr 4fr;
+  grid-template-columns: 5fr 5fr;
   min-height: calc(100vh - 68px);
   background: #f7f4ef;
 }
