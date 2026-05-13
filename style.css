@@ -209,6 +209,10 @@ a { text-decoration: none; color: inherit; }
    ============================================= */
 
 .hero {
+  background-image: url('/images/herb & pot.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: grid;
   grid-template-columns: 6fr 4fr;
   min-height: calc(100vh - 68px);
