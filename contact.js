@@ -1,39 +1,51 @@
 // contact.js
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8UHhnFVj0mpq94Ktt2YpaI9nFgV3rbxHhR5n6MB6XOF15sFRakBjHLwiFPLFyhVcXSQ/exec';
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   const formSuccess = document.getElementById('formSuccess');
   const formError = document.getElementById('formError');
 
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Update button state
-      const originalBtnText = submitBtn.innerHTML;
+  if (!form) return;
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+
+    if (submitBtn) {
       submitBtn.innerHTML = 'Sending...';
       submitBtn.disabled = true;
+    }
 
-      const formData = new FormData(form);
+    if (formSuccess) formSuccess.style.display = 'none';
+    if (formError) formError.style.display = 'none';
 
-      fetch(SCRIPT_URL, {
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/', {
         method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        form.style.display = 'none';
-        if (formSuccess) formSuccess.style.display = 'block';
-        if (formError) formError.style.display = 'none';
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        if (formError) formError.style.display = 'block';
-        submitBtn.innerHTML = originalBtnText;
-        submitBtn.disabled = false;
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(formData).toString()
       });
-    });
-  }
+
+      if (response.ok) {
+        if (formSuccess) formSuccess.style.display = 'block';
+        form.reset();
+      } else {
+        if (formError) formError.style.display = 'block';
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      if (formError) formError.style.display = 'block';
+    } finally {
+      if (submitBtn) {
+        submitBtn.innerHTML = originalBtnText || 'Send Inquiry →';
+        submitBtn.disabled = false;
+      }
+    }
+  });
 });
