@@ -24,7 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
         body: formData
       })
       .then(response => {
-        form.style.display = 'none';
+        form.reset();
+        form.querySelectorAll('.form-group, .form-row, .form-submit, .form-privacy').forEach(element => {
+          element.style.display = 'none';
+        });
         if (formSuccess) formSuccess.style.display = 'block';
         if (formError) formError.style.display = 'none';
       })
