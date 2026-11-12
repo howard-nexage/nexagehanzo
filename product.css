@@ -96,3 +96,73 @@
   .feature-band ul { grid-template-columns: 1fr; }
   .care-card { padding: 34px 24px; }
 }
+/* Ways to Cook */
+.ways-to-cook {
+  background: #f7f4ed;
+}
+
+.ways-grid {
+  width: min(1200px, calc(100% - 48px));
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.way-card {
+  position: relative;
+  min-height: 260px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid rgba(42, 65, 45, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.way-card .step-number {
+  margin-bottom: 28px;
+  color: #738365;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.way-card i {
+  margin-bottom: 20px;
+  color: #607452;
+  font-size: 1.7rem;
+}
+
+.way-card h3 {
+  margin: 0 0 12px;
+  color: #203727;
+  font-size: 1.35rem;
+}
+
+.way-card p {
+  margin: 0;
+  color: #5f655e;
+  line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .ways-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ways-grid {
+    width: min(100% - 32px, 560px);
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .way-card {
+    min-height: auto;
+    padding: 26px 24px;
+  }
+}
